@@ -8,7 +8,7 @@
 
 #include <string.h>
 #include <stdint.h>
-#include "stm8s.h"
+#include "../stm8s.h"
 #include "uart.h"
 
 #define __delay() {\
