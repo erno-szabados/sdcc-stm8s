@@ -1,9 +1,14 @@
 # sdcc-stm8s
 
-Example for SDCC and STM8S microcontroller.
+Examples for SDCC and STM8S microcontroller.
+Includes a rudimentary header for register definitions, interrupts and bitmasks.
+Compiled by the SDCC compiler version 3.5.0, tested on an ST8MSF103.
 
-AN UART Example compiled by the SDCC compiler for an ST8MSF103.
-Sets up an async serial connection with 115200 8N1 and configures 
+UART Example 
+
+Demonstrates async serial connection with 115200 8N1 and configures 
 Internal oscillator to run at 16MHz.
 
-Includes a rudimentary header for register definitions and bitmaps.
+Timer 4 Example
+
+Demonstrates a timer interrupt with 1ms interval (500Hz), toggles PIN PORTB3.
