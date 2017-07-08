@@ -1,78 +1,81 @@
 #ifndef __STM8S_H
 #define __STM8S_H
 
+#include <stdint.h>
+
 /**
- * TODO complete register bitmaps
+ * TODO complete register bitmasks
  */
 
 /* GPIO */
-#define PA_ODR *(unsigned char*)0x5000
-#define PA_IDR *(unsigned char*)0x5001
-#define PA_DDR *(unsigned char*)0x5002
-#define PA_CR1 *(unsigned char*)0x5003
-#define PA_CR2 *(unsigned char*)0x5004
+#define PA_ODR *(volatile uint8_t*)0x5000
+#define PA_IDR *(volatile uint8_t*)0x5001
+#define PA_DDR *(volatile uint8_t*)0x5002
+#define PA_CR1 *(volatile uint8_t*)0x5003
+#define PA_CR2 *(volatile uint8_t*)0x5004
 
-#define PB_ODR *(unsigned char*)0x5005
-#define PB_IDR *(unsigned char*)0x5006
-#define PB_DDR *(unsigned char*)0x5007
-#define PB_CR1 *(unsigned char*)0x5008
-#define PB_CR2 *(unsigned char*)0x5009
+#define PB_ODR *(volatile uint8_t*)0x5005
+#define PB_IDR *(volatile uint8_t*)0x5006
+#define PB_DDR *(volatile uint8_t*)0x5007
+#define PB_CR1 *(volatile uint8_t*)0x5008
+#define PB_CR2 *(volatile uint8_t*)0x5009
 
-#define PC_ODR *(unsigned char*)0x500A
-#define PC_IDR *(unsigned char*)0x500B
-#define PC_DDR *(unsigned char*)0x500C
-#define PC_CR1 *(unsigned char*)0x500D
-#define PC_CR2 *(unsigned char*)0x500E
+#define PC_ODR *(volatile uint8_t*)0x500A
+#define PC_IDR *(volatile uint8_t*)0x500B
+#define PC_DDR *(volatile uint8_t*)0x500C
+#define PC_CR1 *(volatile uint8_t*)0x500D
+#define PC_CR2 *(volatile uint8_t*)0x500E
 
-#define PD_ODR *(unsigned char*)0x500F
-#define PD_IDR *(unsigned char*)0x5010
-#define PD_DDR *(unsigned char*)0x5011
-#define PD_CR1 *(unsigned char*)0x5012
-#define PD_CR2 *(unsigned char*)0x5013
+#define PD_ODR *(volatile uint8_t*)0x500F
+#define PD_IDR *(volatile uint8_t*)0x5010
+#define PD_DDR *(volatile uint8_t*)0x5011
+#define PD_CR1 *(volatile uint8_t*)0x5012
+#define PD_CR2 *(volatile uint8_t*)0x5013
 
-#define PE_ODR *(unsigned char*)0x5014
-#define PE_IDR *(unsigned char*)0x5015
-#define PE_DDR *(unsigned char*)0x5016
-#define PE_CR1 *(unsigned char*)0x5017
-#define PE_CR2 *(unsigned char*)0x5018
+#define PE_ODR *(volatile uint8_t*)0x5014
+#define PE_IDR *(volatile uint8_t*)0x5015
+#define PE_DDR *(volatile uint8_t*)0x5016
+#define PE_CR1 *(volatile uint8_t*)0x5017
+#define PE_CR2 *(volatile uint8_t*)0x5018
 
-#define PF_ODR *(unsigned char*)0x5019
-#define PF_IDR *(unsigned char*)0x501A
-#define PF_DDR *(unsigned char*)0x501B
-#define PF_CR1 *(unsigned char*)0x501C
-#define PF_CR2 *(unsigned char*)0x501D
+#define PF_ODR *(volatile uint8_t*)0x5019
+#define PF_IDR *(volatile uint8_t*)0x501A
+#define PF_DDR *(volatile uint8_t*)0x501B
+#define PF_CR1 *(volatile uint8_t*)0x501C
+#define PF_CR2 *(volatile uint8_t*)0x501D
 
 /* Flash */
-#define FLASH_CR1 *(unsigned char*)0x505A
-#define FLASH_CR2 *(unsigned char*)0x505B
-#define FLASH_NCR2 *(unsigned char*)0x505C
-#define FLASH_FPR *(unsigned char*)0x505D
-#define FLASH_NFPR *(unsigned char*)0x505E
-#define FLASH_IAPRS *(unsigned char*)0x505F
-#define FLASH_PUKR *(unsigned char*)0x5062
-#define FLASH_DUKR *(unsigned char*)0x5064
+#define FLASH_CR1 *(volatile uint8_t*)0x505A
+#define FLASH_CR2 *(volatile uint8_t*)0x505B
+#define FLASH_NCR2 *(volatile uint8_t*)0x505C
+#define FLASH_FPR *(volatile uint8_t*)0x505D
+#define FLASH_NFPR *(volatile uint8_t*)0x505E
+#define FLASH_IAPRS *(volatile uint8_t*)0x505F
+#define FLASH_PUKR *(volatile uint8_t*)0x5062
+#define FLASH_DUKR *(volatile uint8_t*)0x5064
 
 /* Interrupt control */
-#define EXTI_CR1 *(unsigned char*)0x50A0
-#define EXTI_CR2 *(unsigned char*)0x50A1
+#define EXTI_CR1 *(volatile uint8_t*)0x50A0
+#define EXTI_CR2 *(volatile uint8_t*)0x50A1
 
 /* Reset Status */
-#define RST_SR *(unsigned char*)0x50B3
+#define RST_SR *(volatile uint8_t*)0x50B3
 
 /* Clock Registers */
-#define CLK_ICKR *(unsigned char*)0x50C0
-#define CLK_ECKR *(unsigned char*)0x50C1
-#define CLK_CMSR *(unsigned char*)0x50C3
-#define CLK_SWR *(unsigned char*)0x50C4
-#define CLK_SWCR *(unsigned char*)0x50C5
-#define CLK_CKDIVR *(unsigned char*)0x50C6
-#define CLK_PCKENR1 *(unsigned char*)0x50C7
-#define CLK_CSSR *(unsigned char*)0x50C8
-#define CLK_CCOR *(unsigned char*)0x50C9
-#define CLK_PCKENR2 *(unsigned char*)0x50CA
-#define CLK_HSITRIMR *(unsigned char*)0x50CC
-#define CLK_SWIMCCR *(unsigned char*)0x50CD
+#define CLK_ICKR *(volatile uint8_t*)0x50C0
+#define CLK_ECKR *(volatile uint8_t*)0x50C1
+#define CLK_CMSR *(volatile uint8_t*)0x50C3
+#define CLK_SWR *(volatile uint8_t*)0x50C4
+#define CLK_SWCR *(volatile uint8_t*)0x50C5
+#define CLK_CKDIVR *(volatile uint8_t*)0x50C6
+#define CLK_PCKENR1 *(volatile uint8_t*)0x50C7
+#define CLK_CSSR *(volatile uint8_t*)0x50C8
+#define CLK_CCOR *(volatile uint8_t*)0x50C9
+#define CLK_PCKENR2 *(volatile uint8_t*)0x50CA
+#define CLK_HSITRIMR *(volatile uint8_t*)0x50CC
+#define CLK_SWIMCCR *(volatile uint8_t*)0x50CD
 
+/* Clock bitmasks */
 #define CLK_ICKR_REGAH (1 << 5)
 #define CLK_ICKR_LSIRDY (1 << 4)
 #define CLK_ICKR_LSIEN (1 << 3)
@@ -99,56 +102,56 @@
 #define CLK_CKDIVR_CPUDIV0 (1 << 0)
 
 /* Watchdog */
-#define WWDG_CR *(unsigned char*)0x50D1
-#define WWDG_WR *(unsigned char*)0x50D2
-#define IWDG_KR *(unsigned char*)0x50E0
-#define IWDG_PR *(unsigned char*)0x50E1
-#define IWDG_RLR *(unsigned char*)0x50E2
-#define AWU_CSR1 *(unsigned char*)0x50F0
-#define AWU_APR *(unsigned char*)0x50F1
-#define AWU_TBR *(unsigned char*)0x50F2
+#define WWDG_CR *(volatile uint8_t*)0x50D1
+#define WWDG_WR *(volatile uint8_t*)0x50D2
+#define IWDG_KR *(volatile uint8_t*)0x50E0
+#define IWDG_PR *(volatile uint8_t*)0x50E1
+#define IWDG_RLR *(volatile uint8_t*)0x50E2
+#define AWU_CSR1 *(volatile uint8_t*)0x50F0
+#define AWU_APR *(volatile uint8_t*)0x50F1
+#define AWU_TBR *(volatile uint8_t*)0x50F2
 
 /* Beep */
-#define BEEP_CSR *(unsigned char*)0x50F3
+#define BEEP_CSR *(volatile uint8_t*)0x50F3
 
 /* SPI */
-#define SPI_CR1 *(unsigned char*)0x5200
-#define SPI_CR2 *(unsigned char*)0x5201
-#define SPI_ICR *(unsigned char*)0x5202
-#define SPI_SR *(unsigned char*)0x5203
-#define SPI_DR *(unsigned char*)0x5204
-#define SPI_CRCPR *(unsigned char*)0x5205
-#define SPI_RXCRCR *(unsigned char*)0x5206
-#define SPI_TXCRCR *(unsigned char*)0x5207
+#define SPI_CR1 *(volatile uint8_t*)0x5200
+#define SPI_CR2 *(volatile uint8_t*)0x5201
+#define SPI_ICR *(volatile uint8_t*)0x5202
+#define SPI_SR *(volatile uint8_t*)0x5203
+#define SPI_DR *(volatile uint8_t*)0x5204
+#define SPI_CRCPR *(volatile uint8_t*)0x5205
+#define SPI_RXCRCR *(volatile uint8_t*)0x5206
+#define SPI_TXCRCR *(volatile uint8_t*)0x5207
 
 /* I2C */
-#define I2C_CR1 *(unsigned char*)0x5210
-#define I2C_CR2 *(unsigned char*)0x5211
-#define I2C_FREQR *(unsigned char*)0x5212
-#define I2C_OARL *(unsigned char*)0x5213
-#define I2C_OARH *(unsigned char*)0x5214
-#define I2C_DR *(unsigned char*)0x5216
-#define I2C_SR1 *(unsigned char*)0x5217
-#define I2C_SR2 *(unsigned char*)0x5218
-#define I2C_SR3 *(unsigned char*)0x5219
-#define I2C_ITR *(unsigned char*)0x521A
-#define I2C_CCRL *(unsigned char*)0x521B
-#define I2C_CCRH *(unsigned char*)0x521C
-#define I2C_TRISER *(unsigned char*)0x521D
-#define I2C_PECR *(unsigned char*)0x521E
+#define I2C_CR1 *(volatile uint8_t*)0x5210
+#define I2C_CR2 *(volatile uint8_t*)0x5211
+#define I2C_FREQR *(volatile uint8_t*)0x5212
+#define I2C_OARL *(volatile uint8_t*)0x5213
+#define I2C_OARH *(volatile uint8_t*)0x5214
+#define I2C_DR *(volatile uint8_t*)0x5216
+#define I2C_SR1 *(volatile uint8_t*)0x5217
+#define I2C_SR2 *(volatile uint8_t*)0x5218
+#define I2C_SR3 *(volatile uint8_t*)0x5219
+#define I2C_ITR *(volatile uint8_t*)0x521A
+#define I2C_CCRL *(volatile uint8_t*)0x521B
+#define I2C_CCRH *(volatile uint8_t*)0x521C
+#define I2C_TRISER *(volatile uint8_t*)0x521D
+#define I2C_PECR *(volatile uint8_t*)0x521E
 
 /* UART */
-#define UART1_SR *(unsigned char*)0x5230
-#define UART1_DR *(unsigned char*)0x5231
-#define UART1_BRR1 *(unsigned char*)0x5232
-#define UART1_BRR2 *(unsigned char*)0x5233
-#define UART1_CR1 *(unsigned char*)0x5234
-#define UART1_CR2 *(unsigned char*)0x5235
-#define UART1_CR3 *(unsigned char*)0x5236
-#define UART1_CR4 *(unsigned char*)0x5237
-#define UART1_CR5 *(unsigned char*)0x5238
-#define UART1_GTR *(unsigned char*)0x5239
-#define UART1_PSCR *(unsigned char*)0x523A
+#define UART1_SR *(volatile uint8_t*)0x5230
+#define UART1_DR *(volatile uint8_t*)0x5231
+#define UART1_BRR1 *(volatile uint8_t*)0x5232
+#define UART1_BRR2 *(volatile uint8_t*)0x5233
+#define UART1_CR1 *(volatile uint8_t*)0x5234
+#define UART1_CR2 *(volatile uint8_t*)0x5235
+#define UART1_CR3 *(volatile uint8_t*)0x5236
+#define UART1_CR4 *(volatile uint8_t*)0x5237
+#define UART1_CR5 *(volatile uint8_t*)0x5238
+#define UART1_GTR *(volatile uint8_t*)0x5239
+#define UART1_PSCR *(volatile uint8_t*)0x523A
 
 /* UART Status Register bits */
 #define UART_SR_TXE (1 << 7)
@@ -203,38 +206,38 @@
 
 /* TIMERS */
 /* Timer 1 - 16-bit timer with complementary PWM outputs */
-#define TIM1_CR1 *(unsigned char*)0x5250
-#define TIM1_CR2 *(unsigned char*)0x5251
-#define TIM1_SMCR *(unsigned char*)0x5252
-#define TIM1_ETR *(unsigned char*)0x5253
-#define TIM1_IER *(unsigned char*)0x5254
-#define TIM1_SR1 *(unsigned char*)0x5255
-#define TIM1_SR2 *(unsigned char*)0x5256
-#define TIM1_EGR *(unsigned char*)0x5257
-#define TIM1_CCMR1 *(unsigned char*)0x5258
-#define TIM1_CCMR2 *(unsigned char*)0x5259
-#define TIM1_CCMR3 *(unsigned char*)0x525A
-#define TIM1_CCMR4 *(unsigned char*)0x525B
-#define TIM1_CCER1 *(unsigned char*)0x525C
-#define TIM1_CCER2 *(unsigned char*)0x525D
-#define TIM1_CNTRH *(unsigned char*)0x525E
-#define TIM1_CNTRL *(unsigned char*)0x525F
-#define TIM1_PSCRH *(unsigned char*)0x5260
-#define TIM1_PSCRL *(unsigned char*)0x5261
-#define TIM1_ARRH *(unsigned char*)0x5262
-#define TIM1_ARRL *(unsigned char*)0x5263
-#define TIM1_RCR *(unsigned char*)0x5264
-#define TIM1_CCR1H *(unsigned char*)0x5265
-#define TIM1_CCR1L *(unsigned char*)0x5266
-#define TIM1_CCR2H *(unsigned char*)0x5267
-#define TIM1_CCR2L *(unsigned char*)0x5268
-#define TIM1_CCR3H *(unsigned char*)0x5269
-#define TIM1_CCR3L *(unsigned char*)0x526A
-#define TIM1_CCR4H *(unsigned char*)0x526B
-#define TIM1_CCR4L *(unsigned char*)0x526C
-#define TIM1_BKR *(unsigned char*)0x526D
-#define TIM1_DTR *(unsigned char*)0x526E
-#define TIM1_OISR *(unsigned char*)0x526F
+#define TIM1_CR1 *(volatile uint8_t*)0x5250
+#define TIM1_CR2 *(volatile uint8_t*)0x5251
+#define TIM1_SMCR *(volatile uint8_t*)0x5252
+#define TIM1_ETR *(volatile uint8_t*)0x5253
+#define TIM1_IER *(volatile uint8_t*)0x5254
+#define TIM1_SR1 *(volatile uint8_t*)0x5255
+#define TIM1_SR2 *(volatile uint8_t*)0x5256
+#define TIM1_EGR *(volatile uint8_t*)0x5257
+#define TIM1_CCMR1 *(volatile uint8_t*)0x5258
+#define TIM1_CCMR2 *(volatile uint8_t*)0x5259
+#define TIM1_CCMR3 *(volatile uint8_t*)0x525A
+#define TIM1_CCMR4 *(volatile uint8_t*)0x525B
+#define TIM1_CCER1 *(volatile uint8_t*)0x525C
+#define TIM1_CCER2 *(volatile uint8_t*)0x525D
+#define TIM1_CNTRH *(volatile uint8_t*)0x525E
+#define TIM1_CNTRL *(volatile uint8_t*)0x525F
+#define TIM1_PSCRH *(volatile uint8_t*)0x5260
+#define TIM1_PSCRL *(volatile uint8_t*)0x5261
+#define TIM1_ARRH *(volatile uint8_t*)0x5262
+#define TIM1_ARRL *(volatile uint8_t*)0x5263
+#define TIM1_RCR *(volatile uint8_t*)0x5264
+#define TIM1_CCR1H *(volatile uint8_t*)0x5265
+#define TIM1_CCR1L *(volatile uint8_t*)0x5266
+#define TIM1_CCR2H *(volatile uint8_t*)0x5267
+#define TIM1_CCR2L *(volatile uint8_t*)0x5268
+#define TIM1_CCR3H *(volatile uint8_t*)0x5269
+#define TIM1_CCR3L *(volatile uint8_t*)0x526A
+#define TIM1_CCR4H *(volatile uint8_t*)0x526B
+#define TIM1_CCR4L *(volatile uint8_t*)0x526C
+#define TIM1_BKR *(volatile uint8_t*)0x526D
+#define TIM1_DTR *(volatile uint8_t*)0x526E
+#define TIM1_OISR *(volatile uint8_t*)0x526F
 
 /* Timer Control Register bits */
 #define TIM_CR1_ARPE (1 << 7)
@@ -387,76 +390,104 @@
 #define TIM1_CCMR4_CC4S0 (1 << 0) */
 
 /* Timer 2 - 16-bit timer */
-#define TIM2_CR1 *(unsigned char*)0x5300
-#define TIM2_IER *(unsigned char*)0x5303
-#define TIM2_SR1 *(unsigned char*)0x5304
-#define TIM2_SR2 *(unsigned char*)0x5305
-#define TIM2_EGR *(unsigned char*)0x5306
-#define TIM2_CCMR1 *(unsigned char*)0x5307
-#define TIM2_CCMR2 *(unsigned char*)0x5308
-#define TIM2_CCMR3 *(unsigned char*)0x5309
-#define TIM2_CCER1 *(unsigned char*)0x530A
-#define TIM2_CCER2 *(unsigned char*)0x530B
-#define TIM2_CNTRH *(unsigned char*)0x530C
-#define TIM2_CNTRL *(unsigned char*)0x530D
-#define TIM2_PSCR *(unsigned char*)0x530E
-#define TIM2_ARRH *(unsigned char*)0x530F
-#define TIM2_ARRL *(unsigned char*)0x5310
-#define TIM2_CCR1H *(unsigned char*)0x5311
-#define TIM2_CCR1L *(unsigned char*)0x5312
-#define TIM2_CCR2H *(unsigned char*)0x5313
-#define TIM2_CCR2L *(unsigned char*)0x5314
-#define TIM2_CCR3H *(unsigned char*)0x5315
-#define TIM2_CCR3L *(unsigned char*)0x5316
+#define TIM2_CR1 *(volatile uint8_t*)0x5300
+#define TIM2_IER *(volatile uint8_t*)0x5303
+#define TIM2_SR1 *(volatile uint8_t*)0x5304
+#define TIM2_SR2 *(volatile uint8_t*)0x5305
+#define TIM2_EGR *(volatile uint8_t*)0x5306
+#define TIM2_CCMR1 *(volatile uint8_t*)0x5307
+#define TIM2_CCMR2 *(volatile uint8_t*)0x5308
+#define TIM2_CCMR3 *(volatile uint8_t*)0x5309
+#define TIM2_CCER1 *(volatile uint8_t*)0x530A
+#define TIM2_CCER2 *(volatile uint8_t*)0x530B
+#define TIM2_CNTRH *(volatile uint8_t*)0x530C
+#define TIM2_CNTRL *(volatile uint8_t*)0x530D
+#define TIM2_PSCR *(volatile uint8_t*)0x530E
+#define TIM2_ARRH *(volatile uint8_t*)0x530F
+#define TIM2_ARRL *(volatile uint8_t*)0x5310
+#define TIM2_CCR1H *(volatile uint8_t*)0x5311
+#define TIM2_CCR1L *(volatile uint8_t*)0x5312
+#define TIM2_CCR2H *(volatile uint8_t*)0x5313
+#define TIM2_CCR2L *(volatile uint8_t*)0x5314
+#define TIM2_CCR3H *(volatile uint8_t*)0x5315
+#define TIM2_CCR3L *(volatile uint8_t*)0x5316
 
 /* Timer 4 */
-#define TIM4_CR1 *(unsigned char*)0x5340
-#define TIM4_IER *(unsigned char*)0x5343
-#define TIM4_SR *(unsigned char*)0x5344
-#define TIM4_EGR *(unsigned char*)0x5345
-#define TIM4_CNTR *(unsigned char*)0x5346
-#define TIM4_PSCR *(unsigned char*)0x5347
-#define TIM4_ARR *(unsigned char*)0x5348
+#define TIM4_CR1 *(volatile uint8_t*)0x5340
+#define TIM4_IER *(volatile uint8_t*)0x5343
+#define TIM4_SR *(volatile uint8_t*)0x5344
+#define TIM4_EGR *(volatile uint8_t*)0x5345
+#define TIM4_CNTR *(volatile uint8_t*)0x5346
+#define TIM4_PSCR *(volatile uint8_t*)0x5347
+#define TIM4_ARR *(volatile uint8_t*)0x5348
 
+/* Timer 4 bitmasks */
+
+#define TIM4_CR1_ARPE (1 << 7)
+#define TIM4_CR1_OPM (1 << 3)
+#define TIM4_CR1_URS (1 << 2)
+#define TIM4_CR1_UDIS (1 << 1)
+#define TIM4_CR1_CEN (1 << 0)
+
+#define TIM4_IER_UIE (1 << 0)
+
+#define TIM4_SR_UIF (1 << 0)
+
+#define TIM4_EGR_UG (1 << 0)
+
+#define TIM4_PSCR_PSC2 (1 << 2)
+#define TIM4_PSCR_PSC1 (1 << 1)
+#define TIM4_PSCR_PSC0 (1 << 0)
+
+#define TIM4_PSCR_1 0
+#define TIM4_PSCR_2 1
+#define TIM4_PSCR_4 2
+#define TIM4_PSCR_8 3
+#define TIM4_PSCR_16 4
+#define TIM4_PSCR_32 5
+#define TIM4_PSCR_64 6
+#define TIM4_PSCR_128 7
 
 /* ADC 1 */
-#define ADC_DB0RH *(unsigned char*)0x53E0
-#define ADC_DB0RL *(unsigned char*)0x53E1
-#define ADC_DB1RH *(unsigned char*)0x53E2
-#define ADC_DB1RL *(unsigned char*)0x53E3
-#define ADC_DB2RH *(unsigned char*)0x53E4
-#define ADC_DB2RL *(unsigned char*)0x53E5
-#define ADC_DB3RH *(unsigned char*)0x53E6
-#define ADC_DB3RL *(unsigned char*)0x53E7
-#define ADC_DB4RH *(unsigned char*)0x53E8
-#define ADC_DB4RL *(unsigned char*)0x53E9
-#define ADC_DB5RH *(unsigned char*)0x53EA
-#define ADC_DB5RL *(unsigned char*)0x53EB
-#define ADC_DB6RH *(unsigned char*)0x53EC
-#define ADC_DB6RL *(unsigned char*)0x53ED
-#define ADC_DB7RH *(unsigned char*)0x53EE
-#define ADC_DB7RL *(unsigned char*)0x53EF
-#define ADC_DB8RH *(unsigned char*)0x53F0
-#define ADC_DB8RL *(unsigned char*)0x53F1
-#define ADC_DB9RH *(unsigned char*)0x53F2
-#define ADC_DB9RL *(unsigned char*)0x53F3
+#define ADC_DB0RH *(volatile uint8_t*)0x53E0
+#define ADC_DB0RL *(volatile uint8_t*)0x53E1
+#define ADC_DB1RH *(volatile uint8_t*)0x53E2
+#define ADC_DB1RL *(volatile uint8_t*)0x53E3
+#define ADC_DB2RH *(volatile uint8_t*)0x53E4
+#define ADC_DB2RL *(volatile uint8_t*)0x53E5
+#define ADC_DB3RH *(volatile uint8_t*)0x53E6
+#define ADC_DB3RL *(volatile uint8_t*)0x53E7
+#define ADC_DB4RH *(volatile uint8_t*)0x53E8
+#define ADC_DB4RL *(volatile uint8_t*)0x53E9
+#define ADC_DB5RH *(volatile uint8_t*)0x53EA
+#define ADC_DB5RL *(volatile uint8_t*)0x53EB
+#define ADC_DB6RH *(volatile uint8_t*)0x53EC
+#define ADC_DB6RL *(volatile uint8_t*)0x53ED
+#define ADC_DB7RH *(volatile uint8_t*)0x53EE
+#define ADC_DB7RL *(volatile uint8_t*)0x53EF
+#define ADC_DB8RH *(volatile uint8_t*)0x53F0
+#define ADC_DB8RL *(volatile uint8_t*)0x53F1
+#define ADC_DB9RH *(volatile uint8_t*)0x53F2
+#define ADC_DB9RL *(volatile uint8_t*)0x53F3
 
-#define ADC_CSR *(unsigned char*)5400
-#define ADC_CR1 *(unsigned char*)5401
-#define ADC_CR2 *(unsigned char*)5402
-#define ADC_CR3 *(unsigned char*)5403
-#define ADC_DRH *(unsigned char*)5404
-#define ADC_DRL *(unsigned char*)5405
-#define ADC_TDRH *(unsigned char*)5406
-#define ADC_TDRL *(unsigned char*)5407
-#define ADC_HTRH *(unsigned char*)5408
-#define ADC_HTRL *(unsigned char*)5409
-#define ADC_LTRH *(unsigned char*)540A
-#define ADC_LTRL *(unsigned char*)540B
-#define ADC_AWSRH *(unsigned char*)540C
-#define ADC_AWSRL *(unsigned char*)540D
-#define ADC_AWCRH *(unsigned char*)540E
-#define ADC_AWCRL *(unsigned char*)540F
+#define ADC_CSR *(volatile uint8_t*)5400
+#define ADC_CR1 *(volatile uint8_t*)5401
+#define ADC_CR2 *(volatile uint8_t*)5402
+#define ADC_CR3 *(volatile uint8_t*)5403
+#define ADC_DRH *(volatile uint8_t*)5404
+#define ADC_DRL *(volatile uint8_t*)5405
+#define ADC_TDRH *(volatile uint8_t*)5406
+#define ADC_TDRL *(volatile uint8_t*)5407
+#define ADC_HTRH *(volatile uint8_t*)5408
+#define ADC_HTRL *(volatile uint8_t*)5409
+#define ADC_LTRH *(volatile uint8_t*)540A
+#define ADC_LTRL *(volatile uint8_t*)540B
+#define ADC_AWSRH *(volatile uint8_t*)540C
+#define ADC_AWSRL *(volatile uint8_t*)540D
+#define ADC_AWCRH *(volatile uint8_t*)540E
+#define ADC_AWCRL *(volatile uint8_t*)540F
+
+/* ADC bitmasks */
 
 #define ADC_CSR_EOC (1 << 7)
 #define ADC_CSR_AWD (1 << 6)
@@ -483,40 +514,61 @@
 #define ADC_CR3_DRH (1 << 6)
 
 /* CPU */
-#define A *(unsigned char*)7F00
-#define PCE *(unsigned char*)7F01
-#define PCH *(unsigned char*)7F02
-#define PCL *(unsigned char*)7F03
-#define XH *(unsigned char*)7F04
-#define XL *(unsigned char*)7F05
-#define YH *(unsigned char*)7F06
-#define YL *(unsigned char*)7F07
-#define SPH *(unsigned char*)7F08
-#define SPL  *(unsigned char*)7F09
-#define CCR  *(unsigned char*)7F0A
-#define CFG_CCR  *(unsigned char*)7F60
-#define ITC_SPR1  *(unsigned char*)7F70
-#define ITC_SPR2  *(unsigned char*)7F71
-#define ITC_SPR3  *(unsigned char*)7F72
-#define ITC_SPR4  *(unsigned char*)7F73
-#define ITC_SPR5  *(unsigned char*)7F74
-#define ITC_SPR6  *(unsigned char*)7F75
-#define ITC_SPR7  *(unsigned char*)7F76
-#define ITC_SPR8  *(unsigned char*)7F77
+#define A *(volatile uint8_t*)7F00
+#define PCE *(volatile uint8_t*)7F01
+#define PCH *(volatile uint8_t*)7F02
+#define PCL *(volatile uint8_t*)7F03
+#define XH *(volatile uint8_t*)7F04
+#define XL *(volatile uint8_t*)7F05
+#define YH *(volatile uint8_t*)7F06
+#define YL *(volatile uint8_t*)7F07
+#define SPH *(volatile uint8_t*)7F08
+#define SPL  *(volatile uint8_t*)7F09
+#define CCR  *(volatile uint8_t*)7F0A
+#define CFG_CCR  *(volatile uint8_t*)7F60
+#define ITC_SPR1  *(volatile uint8_t*)7F70
+#define ITC_SPR2  *(volatile uint8_t*)7F71
+#define ITC_SPR3  *(volatile uint8_t*)7F72
+#define ITC_SPR4  *(volatile uint8_t*)7F73
+#define ITC_SPR5  *(volatile uint8_t*)7F74
+#define ITC_SPR6  *(volatile uint8_t*)7F75
+#define ITC_SPR7  *(volatile uint8_t*)7F76
+#define ITC_SPR8  *(volatile uint8_t*)7F77
 
 /* SWIM, Debug */
-#define SWIM_CSR  *(unsigned char*)7F80
-#define DM_BK1RE  *(unsigned char*)7F90
-#define DM_BK1RH  *(unsigned char*)7F91
-#define DM_BK1RL  *(unsigned char*)7F92
-#define DM_BK2RE  *(unsigned char*)7F93
-#define DM_BK2RH  *(unsigned char*)7F94
-#define DM_BK2RL  *(unsigned char*)7F95
-#define DM_CR1  *(unsigned char*)7F96
-#define DM_CR2  *(unsigned char*)7F97
-#define DM_CSR1  *(unsigned char*)7F98
-#define DM_CSR2  *(unsigned char*)7F99
-#define DM_ENFCTR  *(unsigned char*)7F9A
+#define SWIM_CSR  *(volatile uint8_t*)7F80
+#define DM_BK1RE  *(volatile uint8_t*)7F90
+#define DM_BK1RH  *(volatile uint8_t*)7F91
+#define DM_BK1RL  *(volatile uint8_t*)7F92
+#define DM_BK2RE  *(volatile uint8_t*)7F93
+#define DM_BK2RH  *(volatile uint8_t*)7F94
+#define DM_BK2RL  *(volatile uint8_t*)7F95
+#define DM_CR1  *(volatile uint8_t*)7F96
+#define DM_CR2  *(volatile uint8_t*)7F97
+#define DM_CSR1  *(volatile uint8_t*)7F98
+#define DM_CSR2  *(volatile uint8_t*)7F99
+#define DM_ENFCTR  *(volatile uint8_t*)7F9A
+
+/* Interrupt Numbers */
+#define INT_TLI 0
+#define INT_AWU 1
+#define INT_CLK 2
+#define INT_EXTI0 3
+#define INT_EXTI1 4
+#define INT_EXTI2 5
+#define INT_EXTI3 6
+#define INT_EXTI4 7
+#define INT_SPI 10
+#define INT_TIM1 11
+#define INT_TIM1_CCM 12
+#define INT_TIM2 13
+#define INT_TIM2_CCM 14
+#define INT_UART1_TX_COMPLETE 17
+#define INT_UART1_DATA_FULL 18
+#define INT_I2C 19
+#define INT_ADC1 22
+#define INT_TIM4 23
+#define INT_FLASH 24
 
 /* Interrupt Vectors */
 #define INT_VECTOR_RESET 0x8000
