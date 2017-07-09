@@ -12,3 +12,8 @@ Internal oscillator to run at 16MHz.
 Timer 4 Example
 
 Demonstrates a timer interrupt with 1ms interval (500Hz), toggles PIN PORTB3.
+
+I2C Master TX Interrupt Example
+
+Demonstrates I2C Master Transmission using interrupts. Counts upwards and sends single byte data 
+to a PCF8574A IO expander. No error handling.
