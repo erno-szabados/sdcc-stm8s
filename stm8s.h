@@ -140,6 +140,88 @@
 #define I2C_TRISER *(volatile uint8_t*)0x521D
 #define I2C_PECR *(volatile uint8_t*)0x521E
 
+#define I2C_CR1_NOSTRETCH (1 << 7)
+#define I2C_CR1_ENGC (1 << 6)
+#define I2C_CR1_PE (1 << 0)
+
+#define I2C_CR2_SWRST (1 << 7)
+#define I2C_CR2_POS (1 << 3)
+#define I2C_CR2_ACK (1 << 2)
+#define I2C_CR2_STOP (1 << 1)
+#define I2C_CR2_START (1 << 0)
+
+#define I2C_OARL_ADD0 (1 << 0)
+
+#define I2C_OAR_ADDR_7BIT ((I2C_OARL & 0xFE) >> 1)
+#define I2C_OAR_ADDR_10BIT (((I2C_OARH & 0x06) << 9) | (I2C_OARL & 0xFF))
+
+#define I2C_OARH_ADDMODE (1 << 7)
+#define I2C_OARH_ADDCONF (1 << 6)
+#define I2C_OARH_ADD9 (1 << 2)
+#define I2C_OARH_ADD8 (1 << 1)
+
+#define I2C_SR1_TXE (1 << 7)
+#define I2C_SR1_RXNE (1 << 6)
+#define I2C_SR1_STOPF (1 << 4)
+#define I2C_SR1_ADD10 (1 << 3)
+#define I2C_SR1_BTF (1 << 2)
+#define I2C_SR1_ADDR (1 << 1)
+#define I2C_SR1_SB (1 << 0)
+
+#define I2C_SR2_WUFH (1 << 5)
+#define I2C_SR2_OVR (1 << 3)
+#define I2C_SR2_AF (1 << 2)
+#define I2C_SR2_ARLO (1 << 1)
+#define I2C_SR2_BERR (1 << 0)
+
+#define I2C_SR3_DUALF (1 << 7)
+#define I2C_SR3_GENCALL (1 << 4)
+#define I2C_SR3_TRA (1 << 2)
+#define I2C_SR3_BUSY (1 << 1)
+#define I2C_SR3_MSL (1 << 0)
+
+#define I2C_ITR_ITBUFEN (1 << 2)
+#define I2C_ITR_ITEVTEN (1 << 1)
+#define I2C_ITR_ITERREN (1 << 0)
+
+/* Precalculated values, all in KHz */
+#define I2C_CCRH_16MHZ_FAST_400 0x80
+#define I2C_CCRL_16MHZ_FAST_400 0x0D
+/*
+ * Fast I2C mode max rise time = 300ns
+ * I2C_FREQR = 16 (MHz) => tMASTER = 1/16 = 62.5 ns
+ * TRISER = (300/62.5) + 1 = floor(4.8) + 1 = 5.
+ */
+#define I2C_TRISER_16MHZ_FAST_400 0x05;
+
+#define I2C_CCRH_16MHZ_FAST_320 0xC0
+#define I2C_CCRL_16MHZ_FAST_320 0x02
+#define I2C_TRISER_16MHZ_FAST_320 0x05;
+
+#define I2C_CCRH_16MHZ_FAST_200 0x80
+#define I2C_CCRL_16MHZ_FAST_200 0x1A
+#define I2C_TRISER_16MHZ_FAST_200 0x05;
+
+#define I2C_CCRH_16MHZ_STD_100 0x00
+#define I2C_CCRL_16MHZ_STD_100 0x50
+/*
+ * Standard I2C mode max rise time = 1000ns
+ * I2C_FREQR = 16 (MHz) => tMASTER = 1/16 = 62.5 ns
+ * TRISER = (1000/62.5) + 1 = floor(16) + 1 = 17.
+ */
+#define I2C_TRISER_16MHZ_STD_100 0x11;
+
+#define I2C_CCRH_16MHZ_STD_50 0x00
+#define I2C_CCRL_16MHZ_STD_50 0xA0
+#define I2C_TRISER_16MHZ_STD_50 0x11;
+
+#define I2C_CCRH_16MHZ_STD_20 0x01
+#define I2C_CCRL_16MHZ_STD_20 0x90
+#define I2C_TRISER_16MHZ_STD_20 0x11;
+
+#define I2C_READ 1
+#define I2C_WRITE 0
+
 /* UART */
 #define UART1_SR *(volatile uint8_t*)0x5230
 #define UART1_DR *(volatile uint8_t*)0x5231
@@ -595,5 +677,11 @@
 
 #define nointerrupts() {__asm sim __endasm;}
 #define interrupts() {__asm rim __endasm;}
+#define wait_for_interrupt() {\
+    __asm \
+    wfi\
+    nop\
+    nop\
+ __endasm;}
 
 #endif /*__STM8S_H */
