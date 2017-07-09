@@ -4,6 +4,14 @@ Examples for SDCC and STM8S microcontroller.
 Includes a rudimentary header for register definitions, interrupts and bitmasks.
 Compiled by the SDCC compiler version 3.5.0, tested on an ST8MSF103.
 
+Links:
+
+http://sdcc.sourceforge.net/
+https://github.com/vdudouyt/stm8flash
+http://www.st.com/en/microcontrollers/stm8s-series.html
+
+Examples:
+
 UART Example 
 
 Demonstrates async serial connection with 115200 8N1 and configures 
