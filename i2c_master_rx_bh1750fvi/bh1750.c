@@ -45,7 +45,11 @@ int bh1750_onetime_read(uint16_t *result, uint8_t resolution) {
                     // divide by 1.2 to get value in lux
                     lux = ((device_cmd.data[0] << 8)| device_cmd.data[1]);
                     lux *= 5;
-                    lux /= 6;
+                    if (resolution == BH1750_RESOLUTION_HI2) {
+                        lux /= 12;
+                    } else {
+                        lux /= 6;
+                    }
                     *result = (uint16_t)lux;
                     sensor_state = SENSOR_READY;
 

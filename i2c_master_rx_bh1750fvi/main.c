@@ -22,7 +22,7 @@ void main() {
 
 
     while (1) {
-        if (0 == bh1750_onetime_read(&sensor_result, BH1750_RESOLUTION_HI)) {
+        if (0 == bh1750_onetime_read(&sensor_result, BH1750_RESOLUTION_HI2)) {
             PC_ODR |= 0x80;
             sprintf(buf, "%u lux\r\n", sensor_result);
             uart_puts(buf);
