@@ -2,7 +2,6 @@
 #define __TIMER4_H
 
 #include <stdint.h>
-#include "../stm8s.h"
 
 /**
  * Timer 4 is a simple 8-bit upcounting counter.

@@ -13,11 +13,9 @@ void port_init() {
 
     PB_ODR = 0x00;
     PB_DDR = 0xFF;
-    PB_CR1 = 0xFF;
-    PB_CR2 = 0x00;
-
     // PIN B 45 I2C is open drain
-    PB_CR1 &= ~0x30;
+    PB_CR1 = 0xCF;
+    PB_CR2 = 0x00;
 
     PC_ODR = 0x00;
     PC_DDR = 0xFF;
