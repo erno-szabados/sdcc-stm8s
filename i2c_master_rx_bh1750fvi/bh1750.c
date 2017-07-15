@@ -18,6 +18,7 @@ typedef enum {
 int bh1750_onetime_read(uint16_t *result, uint8_t resolution) {
     sensor_state_t sensor_state = SENSOR_INIT;
     uint8_t sensor_timeout = 0;
+    uint32_t lux;
     i2c_cmd_t device_cmd;
 
     // TODO timeout, improved error handling
@@ -42,7 +43,10 @@ int bh1750_onetime_read(uint16_t *result, uint8_t resolution) {
                     _i2c_rx_complete = 0;
                     // sensor_result has the sensor value, return it
                     // divide by 1.2 to get value in lux
-                    *result = 5 * (((device_cmd.data[0] << 8)| device_cmd.data[1])) / 6;
+                    lux = ((device_cmd.data[0] << 8)| device_cmd.data[1]);
+                    lux *= 5;
+                    lux /= 6;
+                    *result = (uint16_t)lux;
                     sensor_state = SENSOR_READY;
 
                     return 0;

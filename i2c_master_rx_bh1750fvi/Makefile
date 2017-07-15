@@ -3,7 +3,7 @@ SDLD=sdld
 LDFLAGS=--out-fmt-ihx
 CFLAGS=
 FLASH=stm8flash
-OBJECTS=init.rel timer4.rel i2c.rel bh1750.rel main.rel
+OBJECTS=init.rel timer4.rel i2c.rel bh1750.rel uart.rel main.rel
 SYMBOLS=$(OBJECTS:.rel=.sym)
 ASMS=$(OBJECTS:.rel=.asm)
 LISTS=$(OBJECTS:.rel=.lst)

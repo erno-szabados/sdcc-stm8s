@@ -4,7 +4,7 @@
 // Busy wait
 #define __delay() {\
     uint32_t i;\
-    for(i = 0; i < 40000; i++) \
+    for(i = 0; i < 400000; i++) \
         __asm nop __endasm;\
 }
 
