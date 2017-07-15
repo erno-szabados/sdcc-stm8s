@@ -25,3 +25,9 @@ I2C Master TX Interrupt Example
 
 Demonstrates I2C Master Transmission using interrupts. Counts upwards and sends single byte data 
 to a PCF8574A IO expander. No error handling.
+
+I2C BH1750 Sensor Reading Example
+
+Demonstrates state machine and I2C Master TX/RX using interrupts. 
+Initializes and queries a BH1750 light sensor and reports results over UART at 115200 8N1.
+Toggles PORT C7 on successful read.
